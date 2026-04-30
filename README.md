@@ -2,6 +2,10 @@
 
 A personal portfolio built with React that mimics the MacOS desktop experience. This project features a functional dock, draggable windows, and a set of built-in "apps" to showcase my professional background, projects, and skills.
 
+## 🌐 Live Website
+
+https://ompanjwani.vercel.app
+
 ## Tech Stack
 - **Frontend**: React 19, Framer Motion (for animations and window management)
 - **Icons**: Lucide React
