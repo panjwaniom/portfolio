@@ -1,51 +1,57 @@
-# MacOS Style Personal Portfolio
+# macOS-Style Personal Portfolio
 
-A personal portfolio built with React that mimics the MacOS desktop experience. This project features a functional dock, draggable windows, and a set of built-in "apps" to showcase my professional background, projects, and skills.
+A personal portfolio built with React that mimics the macOS desktop experience,
+complete with a functional dock, draggable windows, and built-in apps to showcase
+my work, skills, and background.
 
-## 🌐 Live Website
+## Live Site
 
-https://ompanjwani.vercel.app
+[ompanjwani.vercel.app](https://ompanjwani.vercel.app)
 
 ## Tech Stack
-- **Frontend**: React 19, Framer Motion (for animations and window management)
-- **Icons**: Lucide React
-- **PDF Rendering**: PDF.js (for the resume viewer)
-- **Build Tool**: Vite
-- **Styling**: Vanilla CSS with a focus on glassmorphism and modern aesthetics
+
+- **Frontend:** React 19, Framer Motion
+- **Icons:** Lucide React
+- **PDF Rendering:** PDF.js
+- **Build Tool:** Vite
+- **Styling:** Vanilla CSS (glassmorphism aesthetic)
 
 ## Features
-- **Desktop Environment**: A dynamic, animated background with interactive desktop icons.
-- **Window Management**: Multiple windows can be opened, focused, dragged, and closed, just like a real desktop OS.
-- **The Dock**: A responsive, animated dock for quick access to applications.
-- **Resume Viewer**: A dedicated viewer for PDF resumes with built-in zoom functionality.
-- **Music Player**: A persistent audio player with a rotating vinyl animation.
-- **Top Bar**: A system-style top bar showing current date/time and system status indicators.
 
-## Setup and Installation
+- **Desktop Environment:** Animated background with interactive desktop icons
+- **Window Management:** Open, focus, drag, and close multiple windows simultaneously
+- **Dock:** Responsive, animated dock for quick app access
+- **Resume Viewer:** In-browser PDF viewer with zoom controls
+- **Music Player:** Persistent audio player with rotating vinyl animation
+- **Top Bar:** System-style bar showing live date/time and status indicators
+
+## Setup & Installation
 
 1. Clone the repository:
-   ```bash
+```bash
    git clone https://github.com/panjwaniom/Portfolio.git
-   ```
+```
 
 2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-## Local Development
-
-To start the development server:
 ```bash
-npm run dev
+   npm install
 ```
-The application will be available at `http://localhost:5173`.
 
-## Environment Variables
-No external API keys or environment variables are required for the current version of this project.
+3. Start the development server:
+```bash
+   npm run dev
+```
+   Available at `http://localhost:5173`
 
-## Future Improvements
-- **Theme Support**: Adding a light mode option and customizable accent colors.
-- **Widget System**: Implementing a sidebar for small widgets like weather or calendar.
-- **Wallpaper Selection**: Allowing users to choose between different dynamic or static backgrounds.
-- **Advanced Music Controls**: Expanding the player to support multiple tracks and playlists.
+```bash
+npm run build     # Production build
+```
+
+> No API keys or environment variables required.
+
+## Roadmap
+
+- Light mode and customizable accent colors
+- Sidebar widget system (weather, calendar)
+- Wallpaper selection with dynamic and static options
+- Multi-track music player with playlist support
