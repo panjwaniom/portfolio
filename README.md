@@ -25,6 +25,14 @@ my work, skills, and background.
 - **Music Player:** Persistent audio player with rotating vinyl animation
 - **Top Bar:** System-style bar showing live date/time and status indicators
 
+## Screenshots
+
+### Homepage
+<img src="screenshots/homepage.png" width="900"/>
+
+### Apps View
+<img src="screenshots/apps.png" width="900"/>
+
 ## Setup & Installation
 
 1. Clone the repository:
