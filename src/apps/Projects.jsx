@@ -4,8 +4,8 @@ import { Code2 } from 'lucide-react';
 const projects = [
   {
     title: 'TaskToDo (Web App)',
-    desc: 'A full-stack task management web app with secure JWT-based authentication, built using React, Node.js, Express, and MySQL.',
-    tech: ['React.js', 'Node.js', 'Express.js', 'MySQL', 'GitHub'],
+    desc: 'A full-stack task management web app with JWT-based authentication, protected routes, and persistent session handling, built with React, Node.js, Express, MySQL, and TypeScript.',
+    tech: ['React', 'TypeScript', 'Node.js', 'Express.js', 'MySQL'],
     repoLink: 'https://github.com/panjwaniom/task-todo-web-app'
   },
   {

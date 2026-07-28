@@ -1,10 +1,10 @@
 import React from 'react';
 
 const skills = {
-  'Languages': ['JavaScript (ES6+)', 'TypeScript', 'Java', 'Python'],
-  'Frontend': ['React', 'HTML5', 'CSS3', 'Tailwind CSS', 'Bootstrap', 'REST APIs', 'Responsive Design', 'Component Architecture'],
-  'Backend': ['Node.js', 'Express.js', 'MySQL'],
-  'Tools': ['Git', 'GitHub', 'Chrome DevTools']
+  'Languages': ['JavaScript (ES6+)', 'TypeScript', 'Python'],
+  'Frontend': ['React', 'Next.js', 'HTML5', 'CSS3', 'Tailwind CSS', 'Redux', 'Context API', 'REST APIs', 'Responsive Design', 'Component Architecture'],
+  'Tools': ['Git', 'GitHub', 'Vite', 'Postman', 'Figma', 'Chrome DevTools'],
+  'Backend': ['Node.js', 'Express.js', 'MySQL']
 };
 
 const Skills = () => {

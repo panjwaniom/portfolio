@@ -1,10 +1,12 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import * as pdfjsLib from 'pdfjs-dist';
-import pdfWorker from 'pdfjs-dist/build/pdf.worker.min.mjs?url';
-import { ZoomIn, ZoomOut, Loader2 } from 'lucide-react';
+import { ZoomIn, ZoomOut, Loader2, Download } from 'lucide-react';
 
-// Set local worker source (Vite compatible)
-pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorker;
+// Configure worker using Vite standard URL pattern
+pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
+  'pdfjs-dist/build/pdf.worker.min.mjs',
+  import.meta.url
+).toString();
 
 const Resume = () => {
   const [scale, setScale] = useState(1.5);
@@ -19,23 +21,23 @@ const Resume = () => {
       setIsLoading(true);
       setError(null);
       
-      const response = await fetch('/resume.pdf');
-      if (!response.ok) {
-        throw new Error(`Failed to fetch resume.pdf: ${response.status} ${response.statusText}`);
-      }
-      
-      const arrayBuffer = await response.arrayBuffer();
-      const loadingTask = pdfjsLib.getDocument({ 
-        data: arrayBuffer,
-        // Disable worker for simpler loading if CDN is failing
-        stopAtErrors: true,
-      });
-      
+      const loadingTask = pdfjsLib.getDocument('/resume.pdf');
       const pdf = await loadingTask.promise;
       setPdfDoc(pdf);
     } catch (err) {
-      console.error('Error loading PDF:', err);
-      setError(`Failed to load PDF: ${err.message}`);
+      console.error('Error loading PDF with worker, trying fallback:', err);
+      try {
+        // Fallback: fetch binary directly
+        const response = await fetch('/resume.pdf');
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const buffer = await response.arrayBuffer();
+        const loadingTask = pdfjsLib.getDocument({ data: new Uint8Array(buffer) });
+        const pdf = await loadingTask.promise;
+        setPdfDoc(pdf);
+      } catch (fallbackErr) {
+        console.error('PDF load failed:', fallbackErr);
+        setError(`Failed to load PDF: ${fallbackErr.message}`);
+      }
     } finally {
       setIsLoading(false);
     }
@@ -91,11 +93,21 @@ const Resume = () => {
 
   return (
     <div className="resume-window-container">
-      {/* Floating Zoom Controls */}
+      {/* Floating Zoom & Action Controls */}
       <div className="resume-zoom-controls">
-        <button onClick={zoomOut} className="resume-zoom-btn" disabled={isLoading}><ZoomOut size={16} /></button>
+        <button onClick={zoomOut} className="resume-zoom-btn" disabled={isLoading} title="Zoom Out"><ZoomOut size={16} /></button>
         <span className="resume-zoom-level">{Math.round(scale * 100)}%</span>
-        <button onClick={zoomIn} className="resume-zoom-btn" disabled={isLoading}><ZoomIn size={16} /></button>
+        <button onClick={zoomIn} className="resume-zoom-btn" disabled={isLoading} title="Zoom In"><ZoomIn size={16} /></button>
+        <div style={{ width: 1, height: 16, backgroundColor: 'rgba(255,255,255,0.2)', margin: '0 4px' }} />
+        <a 
+          href="/resume.pdf" 
+          download="Om_Panjwani_Resume.pdf" 
+          className="resume-zoom-btn"
+          title="Download Resume PDF"
+          style={{ textDecoration: 'none' }}
+        >
+          <Download size={16} />
+        </a>
       </div>
 
       <div className="resume-scroll-area">
@@ -109,6 +121,14 @@ const Resume = () => {
         {error && (
           <div className="resume-error">
             <p>{error}</p>
+            <a 
+              href="/resume.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              style={{ color: '#60a5fa', textDecoration: 'underline', marginTop: '8px' }}
+            >
+              Open PDF directly
+            </a>
           </div>
         )}
 
