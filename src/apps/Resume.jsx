@@ -101,7 +101,7 @@ const Resume = () => {
         <div style={{ width: 1, height: 16, backgroundColor: 'rgba(255,255,255,0.2)', margin: '0 4px' }} />
         <a 
           href="/resume.pdf" 
-          download="Om_Panjwani_Resume.pdf" 
+          download="Om_Panjwani_FullStack_Resume.pdf" 
           className="resume-zoom-btn"
           title="Download Resume PDF"
           style={{ textDecoration: 'none' }}
