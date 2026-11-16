@@ -1,10 +1,12 @@
 import React from 'react';
 
 const skills = {
-  'Languages': ['JavaScript (ES6+)', 'TypeScript', 'Python'],
-  'Frontend': ['React', 'Next.js', 'HTML5', 'CSS3', 'Tailwind CSS', 'Redux', 'Context API', 'REST APIs', 'Responsive Design', 'Component Architecture'],
-  'Tools': ['Git', 'GitHub', 'Vite', 'Postman', 'Figma', 'Chrome DevTools'],
-  'Backend': ['Node.js', 'Express.js', 'MySQL']
+  'Languages': ['JavaScript', 'TypeScript', 'Python', 'SQL'],
+  'Frontend': ['React.js', 'Next.js', 'HTML5', 'CSS3', 'Tailwind CSS', 'Redux Toolkit', 'Context API', 'Responsive Web Design'],
+  'Backend': ['Node.js', 'Express.js', 'REST APIs', 'JWT Authentication', 'FastAPI'],
+  'Databases': ['MySQL', 'PostgreSQL', 'SQLite', 'Redis'],
+  'Tools & DevOps': ['Git', 'GitHub', 'Docker', 'Postman', 'Vite', 'npm', 'Linux', 'Visual Studio Code'],
+  'Core Concepts': ['API Integration', 'CRUD Operations', 'Role-Based Access Control (RBAC)', 'Database Design', 'Async Processing', 'Error Handling', 'Agile']
 };
 
 const Skills = () => {
