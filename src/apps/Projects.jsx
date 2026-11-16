@@ -3,16 +3,34 @@ import { Code2 } from 'lucide-react';
 
 const projects = [
   {
-    title: 'TaskToDo (Web App)',
-    desc: 'A full-stack task management web app with JWT-based authentication, protected routes, and persistent session handling, built with React, Node.js, Express, MySQL, and TypeScript.',
-    tech: ['React', 'TypeScript', 'Node.js', 'Express.js', 'MySQL'],
+    title: 'RelayOps',
+    desc: 'An API integration and data synchronization platform with 5+ API workflows and batch processing of 1,000+ records. Includes BullMQ and Redis background jobs, Gemini-assisted failure analysis, and a workflow that reduced debugging by 35%.',
+    tech: ['React', 'TypeScript', 'Node.js', 'Express', 'PostgreSQL', 'BullMQ', 'Docker'],
+    repoLink: 'https://github.com/panjwaniom/relayops'
+  },
+  {
+    title: 'Wedding Photo Discovery',
+    desc: 'A self-hosted wedding photo search platform built on Immich face recognition. Guests can find their own photos without manually scrolling through thousands of images. Tested with 500+ images.',
+    tech: ['React', 'Python', 'FastAPI', 'Immich', 'Docker'],
+    repoLink: 'https://github.com/panjwaniom/wedding-photo-discovery'
+  },
+  {
+    title: 'Task Manager',
+    desc: 'A full-stack task management application with 6+ features and 10+ API endpoints. Built with JWT authentication, a React and TypeScript frontend, and a Node.js backend connected to MySQL.',
+    tech: ['React', 'TypeScript', 'Node.js', 'Express', 'MySQL', 'JWT'],
     repoLink: 'https://github.com/panjwaniom/task-todo-web-app'
   },
   {
     title: 'Weather & News Dashboard',
-    desc: 'A real-time dashboard built with React and TypeScript that displays weather forecasts and categorized news, featuring smart caching, API optimization, and a smooth experience on slow connections.',
-    tech: ['React.js', 'TypeScript', 'REST APIs'],
-    repoLink: '#'
+    desc: 'A React and TypeScript dashboard that brings weather and news information together using REST APIs and caching for data retrieval.',
+    tech: ['React', 'TypeScript', 'REST APIs', 'Caching'],
+    repoLink: 'https://github.com/panjwaniom/weather-news-dashboard'
+  },
+  {
+    title: 'macOS Portfolio',
+    desc: 'An interactive macOS-inspired portfolio built with React and Framer Motion. Achieved a Lighthouse score of 100 and a First Contentful Paint of 0.6 seconds.',
+    tech: ['React', 'Framer Motion', 'JavaScript', 'Performance Optimization'],
+    repoLink: 'https://github.com/panjwaniom/portfolio'
   }
 ];
 
